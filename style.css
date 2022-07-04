@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--something);
+}
+
+:root {
+    /* Gradient colors */
+    --primary: hsl(236, 72%, 79%);
+    /* To */
+    --secondary: hsl(237, 63%, 64%);
+    --something: hsl(240, 78%, 98%);
+    --primaryText: hsl(232, 13%, 33%);
+    --secondaryText: hsl(234, 14%, 74%);
+    --headerText: hsl(233, 13%, 49%);
+}
+
+
+
+.top-bg {
+    width: 300px;
+    height: 75vh;
+    position: absolute;
+    bottom: 250px;
+    left: 245px;
+    z-index: -1;
+}
+
+.top-bg img {
+    width: 90%;
+}
+
+h1 {
+    margin-top: 60px;
+    text-align: center;
+    font-weight: 700;
+    color: var(--headerText);
+}
+
+.toggle-container {
+    margin: 20px 0 80px 0;
+    display: flex;
+    text-align: center;
+    font-size: 13px;
+    gap: 20px;
+    justify-content: center;
+}
+
+.toggle-container p {
+    margin-top: 2px;
+    font-weight: 600;
+    color: var(--secondaryText);
+}
+
+input[type="checkbox"].toggle {
+    opacity: 0;
+    position: absolute;
+    left: -9000;
+    top: -9000;
+}
+
+input[type="checkbox"].toggle + label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    color: var(--secondaryText);
+    cursor: pointer;
+}
+
+input[type="checkbox"].toggle + label::before {
+    content: '';
+    width: 3em;
+    height: 1.6em;
+    background-image: linear-gradient(to right, var(--primary), var(--secondary));
+    border-radius: 1em;
+    margin-right: 18px;
+    transition: 200ms ease-in-out;
+}
+
+input[type="checkbox"].toggle + label::after {
+    position: absolute;
+    left: .18em;
+    content: '';
+    width: 1.3em;
+    height: 1.3em;
+    background-color: var(--something);
+    border-radius: 1em;
+    margin-right: .25em;
+    transition: 200ms ease-in-out;
+}
+
+input[type="checkbox"].toggle:focus + label::before {
+    outline: 1px solid grey;
+}
+
+input[type="checkbox"].toggle:checked + label::after {
+    transform: translateX(100%);
+    background-color: var(--something);
+    
+}
+
+.card {
+    width: 90%;
+    height: 420px;
+    margin: 30px auto;
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 6px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    text-align: center;
+}
+
+.card-light {
+    background-color: #fff;
+}
+
+.card-dark {
+    background-image: linear-gradient(150deg, var(--primary), var(--secondary));
+}
+
+.card-dark p, .card-dark #price {
+    color: white;
+}
+
+.card-header {
+    font-weight: 700;
+    color: var(--headerText);
+}
+
+#price {
+    padding: 6px;
+    font-weight: 700;
+    font-size: 64px;
+    color: var(--primaryText);
+}
+
+.card-text {
+    font-weight: 700;
+    color: var(--headerText);
+}
+
+hr {
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.093);
+}
+
+.btn {
+    padding: 12px 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: .15em;
+    border: none;
+    border-radius: 6px;
+}
+.btn-dark {
+    background-image: linear-gradient(to right, var(--primary), var(--secondary));
+    color: var(--something);
+}
+
+.btn-light {
+    color: var(--secondary);
+}
+
+
+
